@@ -1,0 +1,6 @@
+{
+  "name": "Bastion-KERN: Elite Security Izcalli",
+  "description": "L3 Security Telemetry & Emergency Management for Cuautitlán Izcalli. Real-time geofencing, patrol tracking, and Safe-Route emergency avoidance.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["Real-time Telemetry", "Geospatial Intelligence"]
+}

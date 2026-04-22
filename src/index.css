@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+/* Leaflet Base */
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+@theme {
+  --color-nucleus-bg: #050505;
+  --color-nucleus-ink: #ffffff;
+  --color-nucleus-accent: #ff3e3e;
+  --color-nucleus-gold: #ffd700;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+:root {
+  background-color: var(--color-nucleus-bg);
+  color: var(--color-nucleus-ink);
+  font-family: var(--font-mono);
+}
+
+.leaflet-container {
+  background: #111 !important;
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+/* Radar Pulse Animation */
+@keyframes radar-pulse {
+  0% { transform: scale(0.1); opacity: 0.8; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+.radar-pulse-ring {
+  border: 2px solid var(--color-nucleus-accent);
+  border-radius: 50%;
+  animation: radar-pulse 3s infinite linear;
+  pointer-events: none;
+}
+
+/* TIER-7: Ghost Stream / Matrix Bit Output */
+.bg-data-stream {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background-image: linear-gradient(0deg, transparent 24%, rgba(0, 255, 65, 0.03) 25%, rgba(0, 255, 65, 0.03) 26%, transparent 27%, transparent 74%, rgba(0, 255, 65, 0.03) 75%, rgba(0, 255, 65, 0.03) 76%, transparent 77%, transparent);
+  background-size: 100% 4px;
+  animation: stream-flow 20s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes stream-flow {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* TIER-7: Bessel Function Haptic Ripple */
+.bessel-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.bessel-ripple:active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  transform: translate(-50%, -50%) scale(0);
+  animation: pulse-bessel 0.6s cubic-bezier(0.0, 0.7, 0.1, 1);
+}
+
+@keyframes pulse-bessel {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+/* TIER-7: Gaussian Glow Dynamic Hierarchy */
+.gaussian-glow-critical {
+  box-shadow: 0 0 30px rgba(220, 38, 38, 0.4), 0 0 80px rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.8);
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* TIER-8: Biological Heartbeat (0.8Hz = 1.25s) */
+@keyframes bio-heartbeat {
+  0%, 100% { opacity: 0.85; transform: scale(1); filter: brightness(1); }
+  50% { opacity: 1; transform: scale(1.02); filter: brightness(1.2); }
+}
+.animate-bio-pulse {
+  animation: bio-heartbeat 1.25s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+/* TIER-8: Background Grid Asynchronous Pulse */
+@keyframes grid-breathe {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.3; }
+}
+.animate-grid-breathe {
+  animation: grid-breathe 4s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+/* TIER-8: MSE Critical Blink (2Hz = 0.5s) */
+@keyframes mse-critical-blink {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); border-color: rgba(255, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(255, 0, 0, 0.9); border-color: rgba(255, 0, 0, 1); }
+}
+.animate-mse-critical-blink {
+  animation: mse-critical-blink 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+/* TIER-8: Spline Interpolation */
+.spline-trans {
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* TIER-7: Parabolic Zoom (Hover State) */
+.zoom-parabolic {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.zoom-parabolic:hover {
+  transform: scale(1.05);
+}
+
+/* TIER-7: Node Pulsing */
+@keyframes critical-node-pulse {
+  0% { transform: scale(0.5); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Flash Alert Glow */
+.alert-critical-glow {
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.4);
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
